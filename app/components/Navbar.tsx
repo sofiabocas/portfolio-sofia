@@ -5,6 +5,7 @@ export default function Navbar() {
         Sofía Bocas
       </span>
       <ul className="flex gap-8 list-none">
+        <li><a href="/en" className="text-xs uppercase tracking-widest text-amber-700 hover:text-amber-500 transition-colors">EN</a></li>
         <li><a href="#sobre-mi" className="text-xs uppercase tracking-widest text-teal-700 hover:text-teal-500 transition-colors">Sobre mí</a></li>
         <li><a href="#proyectos" className="text-xs uppercase tracking-widest text-teal-700 hover:text-teal-500 transition-colors">Proyectos</a></li>
         <li><a href="#contacto" className="text-xs uppercase tracking-widest text-teal-700 hover:text-teal-500 transition-colors">Contacto</a></li>
