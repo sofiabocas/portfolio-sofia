@@ -1,6 +1,17 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { motion, Variants } from "framer-motion";
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+const stagger: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
 
 const proyectos = [
   {
@@ -79,21 +90,35 @@ export default function Proyectos() {
     <>
       <section id="proyectos" className="py-24 bg-stone-50 border-t border-teal-900/10">
         <div className="max-w-5xl mx-auto px-8">
-          <p className="text-xs uppercase tracking-widest text-teal-600 mb-4 flex items-center gap-3">
-            <span className="w-6 h-px bg-teal-600 inline-block"></span>
-            Proyectos
-          </p>
-          <h2 className="text-4xl font-light text-teal-900 mb-4 leading-snug" style={{fontFamily: "Georgia, serif"}}>
-            Trabajo seleccionado
-          </h2>
-          <p className="text-sm text-stone-500 mb-12 max-w-lg leading-relaxed">
-            Una selección de proyectos de análisis de datos, dashboards y soluciones operativas. Haz click en cada uno para ver el detalle.
-          </p>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={fadeUp}
+          >
+            <p className="text-xs uppercase tracking-widest text-teal-600 mb-4 flex items-center gap-3">
+              <span className="w-6 h-px bg-teal-600 inline-block"></span>
+              Proyectos
+            </p>
+            <h2 className="text-4xl font-light text-teal-900 mb-4 leading-snug" style={{fontFamily: "Georgia, serif"}}>
+              Trabajo seleccionado
+            </h2>
+            <p className="text-sm text-stone-500 mb-12 max-w-lg leading-relaxed">
+              Una selección de proyectos de análisis de datos, dashboards y soluciones operativas. Haz click en cada uno para ver el detalle.
+            </p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={stagger}
+          >
             {proyectos.map((p) => (
-              <div
+              <motion.div
                 key={p.id}
+                variants={fadeUp}
                 onClick={() => setSeleccionado(p)}
                 className={`bg-white border border-teal-900/10 rounded-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-200 cursor-pointer ${p.destacado ? "md:col-span-2" : ""}`}
               >
@@ -130,9 +155,9 @@ export default function Proyectos() {
                   <p className="text-sm text-stone-500 leading-relaxed">{p.descripcion}</p>
                   <p className="text-xs text-teal-600 mt-4 tracking-wide">Ver detalle →</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -158,24 +183,20 @@ export default function Proyectos() {
                 ✕
               </button>
             </div>
-
             <div className="p-8">
               <p className="text-xs uppercase tracking-widest text-teal-600 mb-2">{seleccionado.categoria}</p>
               <h3 className="text-2xl font-light text-teal-900 mb-6 leading-snug" style={{fontFamily: "Georgia, serif"}}>
                 {seleccionado.titulo}
               </h3>
-
               <div className="space-y-6">
                 <div>
                   <p className="text-xs uppercase tracking-widest text-stone-400 mb-2">Objetivo</p>
                   <p className="text-sm text-stone-600 leading-relaxed">{seleccionado.objetivo}</p>
                 </div>
-
                 <div>
                   <p className="text-xs uppercase tracking-widest text-stone-400 mb-2">Descripción</p>
                   <p className="text-sm text-stone-600 leading-relaxed">{seleccionado.descripcion}</p>
                 </div>
-
                 {seleccionado.modulos.length > 0 && (
                   <div>
                     <p className="text-xs uppercase tracking-widest text-stone-400 mb-3">Módulos</p>
@@ -186,12 +207,10 @@ export default function Proyectos() {
                     </div>
                   </div>
                 )}
-
                 <div>
                   <p className="text-xs uppercase tracking-widest text-stone-400 mb-2">Conclusión</p>
                   <p className="text-sm text-stone-600 leading-relaxed">{seleccionado.conclusion}</p>
                 </div>
-
                 <div>
                   <p className="text-xs uppercase tracking-widest text-stone-400 mb-3">Herramientas</p>
                   <div className="flex flex-wrap gap-2">

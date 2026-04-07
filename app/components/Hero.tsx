@@ -1,12 +1,18 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center bg-gradient-to-br from-stone-50 via-emerald-50/30 to-teal-50 pt-14">
       <div className="max-w-5xl mx-auto px-8 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          
-          <div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <p className="text-xs uppercase tracking-widest text-teal-600 mb-6 flex items-center gap-3">
               <span className="w-8 h-px bg-teal-600 inline-block"></span>
               Analista · Santiago, Chile
@@ -26,9 +32,14 @@ export default function Hero() {
                 Contacto
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex justify-center md:justify-end">
+          <motion.div
+            className="flex justify-center md:justify-end"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          >
             <div className="relative w-72 h-80">
               <div className="absolute inset-0 rounded-sm overflow-hidden border border-teal-900/10">
                 <Image
@@ -41,7 +52,7 @@ export default function Hero() {
               </div>
               <div className="absolute -bottom-3 -right-3 w-full h-full border border-amber-400/40 rounded-sm pointer-events-none" />
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
