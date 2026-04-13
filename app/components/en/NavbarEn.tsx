@@ -6,6 +6,7 @@ export default function NavbarEn() {
       </span>
       <ul className="flex gap-4 md:gap-8 list-none">
         <li><a href="#about" className="text-xs uppercase tracking-widest text-teal-700 hover:text-teal-500 transition-colors hidden md:block">About</a></li>
+        <li><a href="#certifications" className="text-xs uppercase tracking-widest text-teal-700 hover:text-teal-500 transition-colors hidden md:block">Certifications</a></li>
         <li><a href="#projects" className="text-xs uppercase tracking-widest text-teal-700 hover:text-teal-500 transition-colors hidden md:block">Projects</a></li>
         <li><a href="#contact" className="text-xs uppercase tracking-widest text-teal-700 hover:text-teal-500 transition-colors hidden md:block">Contact</a></li>
         <li><a href="/" className="text-xs uppercase tracking-widest text-amber-700 hover:text-amber-500 transition-colors">ES</a></li>
