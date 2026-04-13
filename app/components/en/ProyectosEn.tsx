@@ -14,18 +14,18 @@ const stagger: Variants = {
 };
 
 const projects = [
-  {
+ {
     id: 1,
     category: "ERP · Own development",
     title: "Sukeen ERP — Restaurant management system",
-    description: "I designed and developed a complete ERP system to centralize the operation of a restaurant and delivery business. It replaced scattered Excel sheets, centralizing sales, expenses, orders, cash register, loyalty and delivery app settlements.",
+    description: "I designed and developed a complete ERP system to centralize the operation of a restaurant and delivery business. It replaced scattered Excel sheets, centralizing sales, expenses, orders, cash register, loyalty and delivery app settlements. The system is actively in use and under continuous development, with new features added every week.",
     objective: "Centralize the business operational data in a single system, replacing scattered Excel sheets and enabling real-time decision-making.",
-    conclusion: "The system reduced recording errors by 50%, eliminated Excel dependency as a database and enabled immediate visualization of business KPIs from any device.",
+    conclusion: "The system reduced recording errors, eliminated Excel dependency as a database and enables real-time visualization of business KPIs from any device.",
     tools: ["Next.js", "PostgreSQL", "React", "TypeScript", "Vercel"],
     image: "/proyectos/sukeen.png",
     color: "from-teal-800 to-blue-800",
     featured: true,
-    modules: ["KPI Dashboard", "Orders", "Sales", "Expenses", "Cash Register", "Delivery Apps", "Kitchen", "Debtors", "Ranking", "Loyalty"],
+    modules: ["KPI Dashboard", "Orders / POS", "Sales", "Expenses", "Cash Register", "Delivery Apps", "Kitchen", "Debtors", "Product Ranking", "Loyalty", "Monthly Comparison", "Customer Profile", "Users", "Automatic email reports"],
   },
   {
     id: 2,
