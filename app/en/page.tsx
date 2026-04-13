@@ -1,6 +1,7 @@
 import NavbarEn from "../components/en/NavbarEn";
 import HeroEn from "../components/en/HeroEn";
 import SobreMiEn from "../components/en/SobreMiEn";
+import CertificacionesEn from "../components/en/CertificacionesEn";
 import ProyectosEn from "../components/en/ProyectosEn";
 import ContactoEn from "../components/en/ContactoEn";
 
@@ -10,6 +11,7 @@ export default function HomeEn() {
       <NavbarEn />
       <HeroEn />
       <SobreMiEn />
+      <CertificacionesEn />
       <ProyectosEn />
       <ContactoEn />
     </main>
